@@ -49,6 +49,8 @@ namespace DatingApp.API.Migrations
 
                     b.Property<DateTime>("Created");
 
+                    b.Property<DateTime>("LastActive");
+
                     b.Property<DateTime>("DateOfBirth");
 
                     b.Property<string>("Gender");

@@ -12,6 +12,10 @@ export class AuthService {
   jwtHelper = new JwtHelperService();
   decodedToken: any;
 
+  get decodedTokenId(): number {
+    return +this.decodedToken.nameid;
+  }
+
   constructor(
     private http: HttpClient
   ) { }
@@ -42,7 +46,6 @@ export class AuthService {
     const token = localStorage.getItem('token');
 
     return !this.jwtHelper.isTokenExpired(token);
-
   }
 
 }
